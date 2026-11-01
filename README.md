@@ -219,4 +219,4 @@ Detailed phase evaluation reports are located in `docs/`:
 - [`Phase 9: Viva Defense Presentation Deck`](docs/project_presentation_deck.md)
 
 ---
-*Built with ❤️ for University Students & Academic Operations — B.Tech NLP Project 2026*
+*Built with ❤️ for University Students & Academic Operations — MBATech AI NLP Project 2026*
