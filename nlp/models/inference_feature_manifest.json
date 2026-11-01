@@ -1,0 +1,23 @@
+{
+  "category": {
+    "model": "category_logreg_tfidf.joblib",
+    "vectorizer": "tfidf_vectorizer.joblib",
+    "sender_encoder": "sender_role_onehot.joblib",
+    "features": [
+      "classification_text_tfidf",
+      "sender_role_onehot"
+    ]
+  },
+  "importance": {
+    "model": "importance_inference_logreg.joblib",
+    "vectorizer": "importance_inference_tfidf.joblib",
+    "sender_encoder": "importance_inference_sender_role.joblib",
+    "features": [
+      "classification_text_tfidf",
+      "sender_role_onehot"
+    ],
+    "training_rows": 1700,
+    "test_rows_used_for_training": 0,
+    "gold_structured_flags_used": false
+  }
+}

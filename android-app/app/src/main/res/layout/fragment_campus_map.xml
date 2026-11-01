@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Main Container -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Top Header Controls (Floor Spinner + Search Bar) -->
+        <!-- Top Header Controls (Floor Spinner + Search Bar) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_map_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E2E8F0"
+            app:cardBackgroundColor="@color/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Header Title & Floor Selector Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Floor:"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginEnd="8dp" />
+
+                    <!-- Spinner for Floor Selection -->
+                    <Spinner
+                        android:id="@+id/spinner_floors"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_pill_search"
+                        android:paddingHorizontal="12dp" />
+                </LinearLayout>
+
+                <!-- Room Search Bar Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_pill_search"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="12dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/text_secondary"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Search Icon" />
+
+                    <EditText
+                        android:id="@+id/et_room_search"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/search_rooms_hint"
+                        android:textSize="13sp"
+                        android:singleLine="true"
+                        android:imeOptions="actionSearch"
+                        android:textColor="@color/text_primary" />
+
+                    <ImageView
+                        android:id="@+id/btn_clear_search"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:padding="2dp"
+                        android:src="@android:drawable/ic_menu_close_clear_cancel"
+                        app:tint="@color/text_secondary"
+                        android:contentDescription="Clear search"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Map Canvas View Area -->
+        <FrameLayout
+            android:id="@+id/frame_map_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/card_map_controls">
+
+            <!-- Interactive Block Map Custom View -->
+            <com.college.campusai.ui.views.BlockMapView
+                android:id="@+id/block_map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Category Legend Ribbon (Horizontal) -->
+            <HorizontalScrollView
+                android:id="@+id/scroll_legend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:scrollbars="none"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:background="#CCFFFFFF">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="■ Classrooms"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="#2563EB"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="■ Exam Halls"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="#7C3AED"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="■ Labs"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="#059669"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="■ Admin / Office"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="#D97706"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="■ Lifts"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="#0891B2"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="■ Restrooms"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="#E11D48"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="■ Staircases"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="#EA580C"
+                        android:layout_marginEnd="10dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Reset / Fit to Screen Floating Button -->
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/fab_fit_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="14dp"
+                android:text="Reset View"
+                android:textSize="11sp"
+                app:icon="@android:drawable/ic_menu_rotate"
+                app:iconSize="14dp"
+                app:backgroundTint="@color/accent"
+                android:textColor="@android:color/white" />
+
+            <!-- Empty / No Results Message Overlay -->
+            <TextView
+                android:id="@+id/tv_no_map_results"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="No rooms found matching your search."
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- Live Search Results Dropdown Overlay -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_search_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_map_controls"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/card_bg"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="240dp"
+                android:clipToPadding="false"
+                android:paddingVertical="4dp" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bottom Room Detail Card (Shows when room is selected / tapped) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_selected_room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/card_bg"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <!-- Room Header Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_detail_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="E-CR-G1"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:background="@drawable/item_border_unselected"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Classroom"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#2563EB"
+                        android:layout_marginStart="8dp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_verified"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✓ Verified"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#059669"
+                        android:layout_marginEnd="8dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_close_detail"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_close_clear_cancel"
+                        android:contentDescription="Close details" />
+                </LinearLayout>
+
+                <!-- Room Name & Subtitle -->
+                <TextView
+                    android:id="@+id/tv_detail_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Classroom G1 (E CR G1)"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_detail_floor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ground Floor • MPSTME Building"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="2dp" />
+
+                <!-- Room Notes / Description -->
+                <TextView
+                    android:id="@+id/tv_detail_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="West Wing smart classroom with dual projectors"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_primary"
+                    android:background="#F8FAFC"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

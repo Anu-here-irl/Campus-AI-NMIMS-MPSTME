@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand & Theme Colors -->
+    <color name="primary">#1A237E</color>
+    <color name="primary_dark">#0D1642</color>
+    <color name="primary_light">#E8EAF6</color>
+    <color name="secondary">#3949AB</color>
+    <color name="accent">#2563EB</color>
+    <color name="background">#F6F7FB</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="divider">#E2E8F0</color>
+
+    <!-- Priority indicators -->
+    <color name="priority_high">#DC2626</color>
+    <color name="priority_high_bg">#FEE2E2</color>
+    <color name="priority_medium">#D97706</color>
+    <color name="priority_medium_bg">#FEF3C7</color>
+    <color name="priority_low">#16A34A</color>
+    <color name="priority_low_bg">#DCFCE7</color>
+
+    <!-- Category tag colors (from reference design) -->
+    <color name="tag_timetable">#2E7D32</color>
+    <color name="tag_timetable_bg">#E8F5E9</color>
+    <color name="tag_exam">#7C3AED</color>
+    <color name="tag_exam_bg">#F3E8FF</color>
+    <color name="tag_notice">#D97706</color>
+    <color name="tag_notice_bg">#FEF3C7</color>
+    <color name="tag_event">#8B5CF6</color>
+    <color name="tag_event_bg">#EDE9FE</color>
+    <color name="tag_assignment">#2563EB</color>
+    <color name="tag_assignment_bg">#DBEAFE</color>
+    <color name="tag_general">#475569</color>
+    <color name="tag_general_bg">#F1F5F9</color>
+
+    <!-- Status badges -->
+    <color name="status_confirmed">#16A34A</color>
+    <color name="status_confirmed_bg">#DCFCE7</color>
+    <color name="status_proposed">#7C3AED</color>
+    <color name="status_proposed_bg">#F3E8FF</color>
+    <color name="status_rejected">#DC2626</color>
+    <color name="status_rejected_bg">#FEE2E2</color>
+
+    <!-- Standard utility colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="chip_stroke">#CBD5E1</color>
+    <color name="shimmer_bg">#E2E8F0</color>
+</resources>

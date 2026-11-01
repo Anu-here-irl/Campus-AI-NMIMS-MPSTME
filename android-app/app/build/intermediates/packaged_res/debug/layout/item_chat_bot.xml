@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="start"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="6dp">
+
+    <!-- AI Sparkle Avatar -->
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_sparkle"
+        app:tint="@color/primary"
+        android:background="@drawable/bg_quick_action"
+        android:padding="6dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="CampusAI Assistant" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="280dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_chat_bot"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tv_chat_bot_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Based on your Computer Networks notes, Module 4 covers TCP/IP, Congestion Control, and Routing Protocols."
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:lineSpacingExtra="3dp" />
+
+        <TextView
+            android:id="@+id/tv_chat_bot_sources"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Source: CN_Notes.pdf ↗"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/accent"
+            android:background="@drawable/bg_category_badge"
+            android:backgroundTint="#EFF6FF"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

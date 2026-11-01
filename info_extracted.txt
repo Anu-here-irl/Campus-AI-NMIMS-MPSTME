@@ -1,0 +1,1655 @@
+Campus AI — Complete Project Blueprint
+
+Your project should be presented as an NLP-based intelligent campus assistant with an Android mobile application as its user interface. The NLP system is the core of the project; the mobile app makes that intelligence useful to students in their daily college life.
+
+The goal is not to build an ordinary timetable or email app and simply add a chatbot. The goal is to build a system that understands college-related information, classifies it, identifies important dates and changes, and presents the results in a personalized mobile application.
+
+I'll structure this as a comprehensive specification you can give to another AI coding agent, such as a VS Code agent, to implement the project in phases while reusing Person 1's existing NLP work rather than unnecessarily rebuilding it.
+
+1. Project overview
+
+Core: NLP intelligence
+
+Email classification, importance prediction, information extraction, date recognition and timetable-change detection.
+
+Interface: Android application
+
+A student dashboard, categorized emails, timetable, notes, campus map and AI chatbot.
+
+Backend: Python API
+
+Connects the NLP pipeline, database, email integrations, Notion and the Android app.
+
+Storage: PostgreSQL
+
+Stores categorized email metadata, extracted events, user settings, room information and synchronization records.
+
+Project objectives
+
+Automatically classify college emails into meaningful categories.
+
+Predict email importance so students can prioritize what to read.
+
+Extract dates, deadlines, subjects, venues and other useful information.
+
+Identify potential exam, lecture, classroom or timetable changes.
+
+Present college information through a usable Android application.
+
+Allow students to manage their timetable, preferably using Notion as the primary timetable source.
+
+Let students upload notes and ask questions based on their own study material.
+
+Provide an indoor map of the college's single building using actual floor-plan photographs.
+
+Evaluate the NLP system using synthetic data first and real, appropriately authorized test emails later.
+
+Academic emphasis: The project must demonstrate NLP methods, a measurable evaluation, and an end-to-end application that uses the NLP outputs. The other modules support this main goal.
+
+2. Recommended technology stack
+
+Layer
+
+Technology
+
+Responsibility
+
+Mobile app
+
+Android Studio, Java, XML
+
+User interface and navigation
+
+NLP
+
+Existing Python model and scripts from Person 1
+
+Classification and prediction
+
+Backend
+
+Python, FastAPI
+
+API endpoints, processing and integration
+
+Database
+
+PostgreSQL
+
+Structured persistent data
+
+Email
+
+Gmail API and Google OAuth
+
+Authorized access to a test Gmail account
+
+Timetable
+
+Notion API
+
+Read and synchronize the student's Notion timetable
+
+Notes
+
+File storage + document extraction + retrieval
+
+Searchable personal study material
+
+Chatbot
+
+LLM API or an available local model + retrieval
+
+Answer questions grounded in notes and approved campus data
+
+Indoor map
+
+Custom Android floor-plan viewer
+
+Search rooms and highlight routes
+
+Notifications
+
+Android notifications; Firebase Cloud Messaging if needed
+
+Important deadline and schedule alerts
+
+These are the proposed technologies, not claims that all integrations already exist. Use the current project dependencies and available credentials where possible.
+
+Important architectural rule
+
+Do not run the Python NLP model directly inside the Android app, and do not connect the Android app directly to PostgreSQL.
+
+Use this flow:
+
+Android application
+
+Java / XML
+
+FastAPI backend
+
+Authentication · API · NLP orchestration
+
+NLP engine
+
+Classification and extraction
+
+PostgreSQL
+
+Data and records
+
+External integrations: Gmail · Notion · document/LLM services · notifications
+
+This separation lets Person 1 improve the NLP model without requiring the Android application to be rewritten.
+
+3. What Person 1 has already built
+
+From the earlier project context, Person 1 has an existing Python inference script at:
+
+campusai_artifacts/campusai_inference.py
+
+It has produced output in this format:
+
+{
+
+  "category": "EXAM",
+
+  "category_confidence": 0.13397334143637787,
+
+  "importance": "MEDIUM",
+
+  "importance_confidence": 0.480288197039453
+
+}
+
+This is the starting integration contract, not proof that the model is finished or accurate enough.
+
+The next coding agent must inspect the actual project files before changing anything.
+
+Existing NLP responsibilities to preserve
+
+Email text preprocessing.
+
+Category prediction.
+
+Importance prediction.
+
+Confidence scores.
+
+Existing model artifacts, training scripts and inference code.
+
+Existing label definitions and synthetic training data.
+
+The agent should not replace the model with a different architecture merely because it prefers another one.
+
+What still needs verification or implementation
+
+Whether the category and importance labels are final.
+
+Whether the model is trained and can load consistently.
+
+Whether predictions are reliable on unseen emails.
+
+How to evaluate accuracy, precision, recall and F1-score.
+
+Whether the model needs date, location and event extraction.
+
+How the inference code will be called safely by FastAPI.
+
+How to record model version, prediction and correction for evaluation.
+
+If the existing code is incomplete, repair it incrementally. If it works, integrate it as a reusable module.
+
+4. Complete functional requirements
+
+Module A — NLP-based smart email management
+
+This is the primary module and should be the first end-to-end feature.
+
+A1. Email ingestion
+
+Accept synthetic emails during development. Later, import emails from a dedicated Gmail test account containing forwarded college emails. Support direct Gmail authorization as a later extension.
+
+A2. Automatic classification
+
+Use Person 1's model to assign categories. Suggested categories include EXAM, ASSIGNMENT, EVENT, DEADLINE, ACADEMIC, ADMINISTRATION, COMMITTEE, JOURNAL, QUERY and TIMETABLE_CHANGE. Reconcile these with the actual model labels before implementation.
+
+A3. Importance prediction
+
+Predict importance using the existing model. Use the model's actual supported levels; MEDIUM is one observed example, not proof that all levels are implemented. Show confidence separately and do not treat confidence as a guaranteed probability of correctness.
+
+A4. Information extraction
+
+Extract relevant dates, times, venues, rooms, subjects, deadlines and event names. Start with explicit date parsing and rules; introduce a dedicated NLP entity extraction model only if required.
+
+A5. Timetable-change detection
+
+Detect language such as “lecture moved to Room 204” or “exam postponed to Friday.” Create a proposed change, show the evidence from the email, and request student confirmation before updating the timetable.
+
+A6. Email search and filtering
+
+Display emails by category, importance, date and unread status. Preserve the original email and link the prediction and extracted information to it.
+
+Example workflow
+
+An email says:
+
+The Computer Networks examination scheduled for 12 November has been moved to Room 204 on 14 November at 10 AM.
+
+The system should:
+
+Store the email and identify duplicate imports.
+
+Predict its category and importance.
+
+Extract the subject, old date, new date, time and room if supported by the text.
+
+Mark the potential timetable change for review.
+
+Show the email, confidence and extracted evidence in Android.
+
+Ask the student to confirm the proposed change.
+
+Update Notion only after confirmation and record the synchronization result.
+
+The example demonstrates the intended behavior. Actual extraction quality must be tested.
+
+Module B — Student dashboard
+
+The home screen should show:
+
+Important emails.
+
+Upcoming deadlines and examinations.
+
+Today's timetable.
+
+Recently detected timetable changes awaiting confirmation.
+
+Quick access to notes, chatbot and campus map.
+
+Notifications for relevant upcoming events.
+
+Do not create separate, disconnected copies of the same event throughout the app. Use shared backend records and consistent identifiers.
+
+Module C — Timetable and Notion synchronization
+
+Notion should be the primary timetable source for students who connect it, while Campus AI provides the mobile interface and intelligent change suggestions.
+
+Required behavior:
+
+Connect a Notion integration with explicit authorization.
+
+Let the user select a timetable database.
+
+Read timetable entries and display them in Android.
+
+Keep a mapping between Notion page IDs and local event records.
+
+Detect updates and refresh the mobile view.
+
+Generate a proposed change from a classified email.
+
+Let the student review and confirm the change.
+
+Update the appropriate Notion entry and record success or failure.
+
+Handle deleted, edited or conflicting entries without silently overwriting changes.
+
+Provide a fallback timetable stored in Campus AI for students who do not use Notion.
+
+Start with reading the Notion timetable. Add write-back only after the read flow works. Notion integrations can only access pages and databases shared with them, and the application must request appropriate authorization.
+
+Module D — Notes library and study chatbot
+
+Students should be able to:
+
+Upload PDFs and supported text-based notes.
+
+Organize notes by subject, semester and custom category.
+
+View and delete their own uploaded files.
+
+Search for notes and retrieve relevant passages.
+
+Ask questions such as “Explain this topic from my Computer Networks notes.”
+
+Receive answers grounded in their uploaded material, with document or page references where available.
+
+Ask general campus-related questions using approved campus information.
+
+Suggested processing pipeline:
+
+Upload → validate → extract text → split into chunks → index → retrieve relevant passages → generate answer with sources
+
+Use a retrieval-augmented generation (RAG) design. Do not pretend the chatbot knows the contents of a document that failed to parse, and do not use one student's private notes to answer another student's query.
+
+Module E — Indoor college map
+
+The college has one building, and floor-plan photographs are available. This means a custom indoor map is a realistic project feature.
+
+Required behavior:
+
+Let students select a floor.
+
+Display that floor's digitized plan.
+
+Support zooming and panning.
+
+Search by room number, room name or location type.
+
+Tap a room to see its details.
+
+Optionally highlight a route along mapped corridors.
+
+Show stairs, lifts, entrances and other navigation points when identifiable from the floor plans.
+
+Allow corrections when room labels are unclear.
+
+Use the actual floor-plan images as source material. Do not invent room numbers or locations. If the source image is unclear, flag the item for manual verification.
+
+For the first version, an image-based custom Android viewer with room overlays is sufficient. Store room metadata and route nodes in PostgreSQL. Live indoor location tracking is out of scope unless additional positioning infrastructure is available.
+
+Module F — Authentication, privacy and notifications
+
+User registration and login.
+
+Per-user access checks on all private records.
+
+Secure storage of OAuth credentials and API keys.
+
+Clear disconnection and data-deletion workflows.
+
+Duplicate-email handling.
+
+Error logging without unnecessarily recording sensitive email content.
+
+Optional local notifications and push notifications for deadlines.
+
+User confirmation for timetable changes and other consequential actions.
+
+For a college demonstration, you may begin with a single test account and a development login. However, the architecture should not assume all students share the same email, notes or timetable.
+
+5. Database architecture
+
+Use PostgreSQL as the persistent database. The following is the proposed logical schema, not a requirement to create every table before the first working feature.
+
+Table
+
+Important fields
+
+Purpose
+
+users
+
+id, email, created_at
+
+Student accounts
+
+email_connections
+
+id, user_id, provider, status, credential_ref
+
+Authorized email integrations
+
+emails
+
+id, user_id, provider_message_id, subject, sender, received_at, body_ref
+
+Email metadata and content reference
+
+email_predictions
+
+email_id, category, category_confidence, importance, importance_confidence, model_version
+
+NLP outputs and versioning
+
+extracted_entities
+
+id, email_id, entity_type, value, normalized_value, confidence
+
+Dates, times, rooms, subjects and other extracted entities
+
+events
+
+id, user_id, title, start_at, end_at, location, source_email_id, status
+
+Events and proposed timetable changes
+
+notion_connections
+
+id, user_id, database_id, credential_ref, status
+
+Notion integration
+
+notion_sync_records
+
+id, event_id, notion_page_id, sync_status, last_synced_at
+
+Local-to-Notion mapping
+
+subjects
+
+id, user_id, name
+
+Student subjects
+
+notes
+
+id, user_id, subject_id, file_ref, file_type, status
+
+Uploaded documents
+
+document_chunks
+
+id, note_id, chunk_index, text, page_number
+
+Searchable text passages
+
+campus_floors
+
+id, floor_name, floor_order, plan_ref
+
+Floor-plan metadata
+
+campus_rooms
+
+id, floor_id, room_code, room_name, room_type, map_coordinates
+
+Searchable rooms
+
+campus_route_nodes
+
+id, floor_id, x, y, node_type
+
+Walkable points on floor plans
+
+campus_route_edges
+
+id, from_node_id, to_node_id, distance
+
+Connections between route nodes
+
+Database design requirements
+
+Use foreign keys and appropriate indexes.
+
+Enforce uniqueness for provider message IDs within the correct user/connection scope.
+
+Store timestamps consistently and handle time zones.
+
+Use migrations, such as Alembic, instead of modifying production schemas manually.
+
+Keep file binaries in controlled file storage; store file references in PostgreSQL.
+
+Never store OAuth tokens, API keys or passwords in plaintext.
+
+Use a separate prediction record so model upgrades can be evaluated without losing original email data.
+
+Use access controls to ensure that users can retrieve only their own records.
+
+Make sync operations idempotent where possible: retrying should not create duplicate events.
+
+PostgreSQL does not have to store vector embeddings in the first version. If semantic search needs them, pgvector can be added later.
+
+6. Backend API architecture
+
+FastAPI exposes a consistent interface to Android. Exact request and response schemas should be documented using OpenAPI and tested before connecting the mobile app.
+
+Endpoint
+
+Purpose
+
+POST /api/v1/auth/register
+
+Register a user
+
+POST /api/v1/auth/login
+
+Authenticate a user
+
+GET /api/v1/dashboard
+
+Retrieve dashboard summary
+
+GET /api/v1/emails
+
+List and filter emails
+
+GET /api/v1/emails/{id}
+
+View one email and its NLP results
+
+POST /api/v1/emails/sync
+
+Start an authorized email synchronization
+
+POST /api/v1/nlp/predict
+
+Run NLP on an authorized test email or text
+
+GET /api/v1/events
+
+Retrieve events and timetable items
+
+GET /api/v1/events/proposals
+
+Retrieve pending timetable-change proposals
+
+POST /api/v1/events/{id}/confirm
+
+Confirm a proposed event change
+
+POST /api/v1/events/{id}/reject
+
+Reject a proposed event change
+
+POST /api/v1/notion/connect
+
+Initiate Notion connection
+
+GET /api/v1/notion/timetable
+
+Read synchronized timetable data
+
+POST /api/v1/notion/sync
+
+Synchronize approved changes
+
+POST /api/v1/notes/upload
+
+Upload a note
+
+GET /api/v1/notes
+
+List personal notes
+
+POST /api/v1/chat
+
+Ask a question using authorized context
+
+GET /api/v1/campus/floors
+
+List floors
+
+GET /api/v1/campus/floors/{id}/rooms
+
+List rooms on a floor
+
+GET /api/v1/campus/search?q=
+
+Search rooms and locations
+
+GET /api/v1/campus/routes
+
+Retrieve a route between mapped locations
+
+The coding agent may adjust these endpoints to suit the existing code, but it must document the final contract and keep Android and backend implementations consistent.
+
+Example: NLP response contract
+
+Keep the existing model's fields and add new fields only when implemented.
+
+{
+
+  "category": "EXAM",
+
+  "category_confidence": 0.13,
+
+  "importance": "MEDIUM",
+
+  "importance_confidence": 0.48,
+
+  "entities": [],
+
+  "proposed_event": null,
+
+  "model_version": "existing-model"
+
+}
+
+This is a proposed API example, not an exact response that the existing inference script already returns. The agent must preserve the actual model output and map it explicitly to the API schema. Empty entities are valid when extraction has not been implemented or no entities are found.
+
+7. Suggested repository structure
+
+First inspect the existing repository. Preserve Person 1's model files and the current Android Studio package. The following is a target structure, not an instruction to move or rename working files blindly.
+
+CampusAI/
+
+│
+
+├── nlp/
+
+│   ├── existing_model_files/
+
+│   ├── campusai_inference.py
+
+│   ├── preprocessing.py
+
+│   ├── entity_extraction.py
+
+│   ├── evaluation.py
+
+│   └── tests/
+
+│
+
+├── backend/
+
+│   ├── app/
+
+│   │   ├── main.py
+
+│   │   ├── api/
+
+│   │   │   ├── auth.py
+
+│   │   │   ├── emails.py
+
+│   │   │   ├── events.py
+
+│   │   │   ├── notion.py
+
+│   │   │   ├── notes.py
+
+│   │   │   ├── chat.py
+
+│   │   │   └── campus.py
+
+│   │   ├── services/
+
+│   │   ├── models/
+
+│   │   ├── schemas/
+
+│   │   ├── database/
+
+│   │   ├── integrations/
+
+│   │   │   ├── gmail/
+
+│   │   │   └── notion/
+
+│   │   └── security/
+
+│   ├── migrations/
+
+│   ├── tests/
+
+│   ├── requirements.txt
+
+│   └── .env.example
+
+│
+
+├── android-app/
+
+│   └── existing Android Studio project
+
+│
+
+├── data/
+
+│   ├── synthetic/
+
+│   └── evaluation/
+
+│
+
+├── campus-map/
+
+│   ├── source_floor_plans/
+
+│   └── processed_floor_plans/
+
+│
+
+├── docs/
+
+│   ├── architecture.md
+
+│   ├── api-contract.md
+
+│   ├── database-schema.md
+
+│   └── testing.md
+
+│
+
+└── README.md
+
+Do not commit credentials, private emails, OAuth tokens or real student data. Source floor plans should also be kept out of public repositories if they contain sensitive building information.
+
+8. Implementation phases
+
+Build the project in the following order. Every phase should end with a working, testable deliverable.
+
+Phase 0 — Audit the existing project
+
+Start here
+
+Tasks
+
+Inspect the NLP source code, trained artifacts, dependencies and sample predictions.
+
+Inspect the Android project, Java activities, XML layouts and package name.
+
+Identify any existing backend or database.
+
+Run the current NLP inference script and capture a baseline.
+
+Create a dependency and missing-feature report.
+
+Completion: A verified inventory of what exists, what works and what must be built. No unnecessary rewrite.
+
+Phase 1 — Stabilize and evaluate the NLP model
+
+Tasks
+
+Finalize the category and importance label mapping based on the actual model.
+
+Standardize preprocessing and prediction output.
+
+Build a labeled evaluation dataset.
+
+Measure per-class precision, recall, F1-score and overall accuracy.
+
+Inspect misclassified emails and low-confidence predictions.
+
+Add unit tests for inference and malformed input.
+
+Completion: A reproducible NLP module with documented metrics, limitations and a stable interface.
+
+Phase 2 — Backend and database
+
+Tasks
+
+Set up PostgreSQL and database migrations.
+
+Build FastAPI and configuration management.
+
+Create user, email, prediction and event models.
+
+Wrap Person 1's inference code in an NLP service.
+
+Implement POST /nlp/predict, email storage and retrieval.
+
+Add validation, error handling, access checks and tests.
+
+Completion: A synthetic email can pass through the API, be classified by the existing model, be saved in PostgreSQL and retrieved with its prediction.
+
+Phase 3 — Android application integration
+
+Tasks
+
+Connect the existing Android project to FastAPI.
+
+Build or refine login and dashboard screens.
+
+Add categorized email lists, importance indicators and email details.
+
+Show confidence and extracted information in a useful way.
+
+Handle loading states, API errors and empty results.
+
+Test against the backend on a real device or emulator.
+
+Completion: A student can view real backend records in Android; predictions are not hardcoded into the UI.
+
+Phase 4 — Real email testing
+
+Tasks
+
+Start with a dedicated Gmail test account.
+
+Obtain authorized access using Google OAuth.
+
+Import forwarded college emails and preserve message IDs.
+
+Handle pagination, retries and duplicate messages.
+
+Compare predictions with manually labeled test emails.
+
+Add direct Gmail connection later, if feasible.
+
+Completion: An authorized, repeatable email ingestion pipeline and a report evaluating real-world NLP performance.
+
+Phase 5 — Entity extraction and timetable changes
+
+Tasks
+
+Extract dates, times, rooms, subjects and event names.
+
+Normalize dates with appropriate time-zone handling.
+
+Detect potential changes using NLP outputs and rules.
+
+Present proposed changes with supporting email text.
+
+Require confirmation before writing updates to the timetable.
+
+Completion: A timetable change can be proposed and reviewed without silently altering the student's schedule.
+
+Phase 6 — Notion integration
+
+Tasks
+
+Authorize a Notion integration and select a timetable database.
+
+Read timetable entries and map page IDs.
+
+Display entries in Android.
+
+Implement refresh and synchronization status.
+
+Write confirmed changes back to Notion.
+
+Test conflicts, deleted pages and API failures.
+
+Completion: Notion works as the primary timetable source for connected students.
+
+Phase 7 — Notes and AI chatbot
+
+Tasks
+
+Add document uploads and text extraction.
+
+Organize notes by subject and category.
+
+Build document chunking and retrieval.
+
+Connect the chatbot to retrieved notes and approved campus information.
+
+Show sources and handle questions that cannot be answered from available material.
+
+Enforce user-level data isolation.
+
+Completion: A student can ask questions and receive answers grounded in their own uploaded notes.
+
+Phase 8 — Indoor campus map
+
+Tasks
+
+Process the supplied floor-plan photographs.
+
+Verify floor labels, room numbers and corridors.
+
+Build the floor selector and zoomable map.
+
+Add searchable room overlays.
+
+Add route nodes and corridor connections where the plan supports them.
+
+Test the map on different screen sizes.
+
+Completion: Students can search for rooms and view the correct floor, with route highlighting if implemented.
+
+Phase 9 — Final integration and evaluation
+
+Tasks
+
+Test the full email-to-NLP-to-database-to-Android flow.
+
+Test Notion synchronization and duplicate handling.
+
+Test permissions, failures, malformed data and privacy controls.
+
+Evaluate the NLP on a held-out test set.
+
+Measure API reliability and basic response time.
+
+Prepare documentation, diagrams, screenshots and a demonstration.
+
+Completion: A reproducible project demo, technical documentation and a defensible NLP evaluation report.
+
+Scope control: Phases 0–4 establish the essential NLP project and mobile-app integration. Phase 5 makes the NLP results more actionable. Phases 6–8 extend it into the broader student assistant. If time is limited, complete and test the core flow before attempting every advanced feature.
+
+9. Master prompt to give the other AI coding agent
+
+Copy this entire prompt into your coding agent. It tells the agent to work with your existing files, build the complete application, and implement it incrementally rather than generating disconnected code that does not run.
+
+MASTER PROJECT SPECIFICATION: CAMPUS AI
+
+1. Your role
+
+Act as a senior NLP engineer, Python backend developer, database architect, and Android application developer.
+
+Your task is to inspect, implement, integrate, test, and document a complete academic project called Campus AI. The final system must be a functioning NLP-based intelligent campus assistant with an Android mobile application.
+
+Do not merely provide sample code or tutorials. Work directly in the existing project repository, create and modify files as required, run tests, resolve errors, and document the steps needed to execute the complete application.
+
+Implement the system in the phases defined below. Do not claim that a feature is complete unless it has been implemented and tested.
+
+2. Project purpose
+
+Campus AI is primarily an NLP project that uses natural language processing to understand college-related emails and transform their information into useful student services.
+
+The Android application is the interface through which students access these NLP-powered features.
+
+The project should:
+
+Classify college emails into relevant categories.
+
+Predict email importance.
+
+Extract relevant information such as dates, times, rooms, venues, subjects, and deadlines.
+
+Detect potential examination, lecture, classroom, and timetable changes.
+
+Present categorized emails and important events in Android.
+
+Synchronize with a student's Notion timetable.
+
+Provide an AI chatbot grounded in uploaded study notes and approved campus information.
+
+Provide a searchable indoor map of the college's single building, using actual floor-plan photographs.
+
+Support evaluation of the NLP system using synthetic and authorized real email data.
+
+The NLP pipeline is the central component. Do not reduce the project to a CRUD application or a generic chatbot.
+
+3. Mandatory first step: inspect the repository
+
+Before writing or replacing code:
+
+Inspect the complete repository structure.
+
+Locate Person 1's existing NLP code, model files, training scripts, inference scripts, configuration files, and datasets.
+
+Locate the existing Android Studio project and preserve its application ID/package name, Java/XML structure, working screens, and dependencies.
+
+Check whether any backend or database code already exists.
+
+Run the existing NLP inference script and record the actual output.
+
+Identify missing files, broken imports, incompatible dependencies, and incomplete features.
+
+Produce a concise implementation plan based on what actually exists.
+
+The known NLP entry point is:
+
+campusai_artifacts/campusai_inference.py
+
+This path may be relative to the existing repository. Locate it rather than assuming the repository has a particular root structure.
+
+An example output previously observed is:
+
+{
+
+  "category": "EXAM",
+
+  "category_confidence": 0.13397334143637787,
+
+  "importance": "MEDIUM",
+
+  "importance_confidence": 0.480288197039453
+
+}
+
+Treat this only as an example of an observed prediction. Verify the actual model, label set, inference behavior, and artifacts.
+
+Do not replace Person 1's NLP model without a demonstrated technical reason. Reuse and repair the existing model first. Do not fabricate accuracy numbers or assume the model is production-ready.
+
+4. Required technology stack
+
+Android application
+
+Android Studio
+
+Java
+
+XML layouts
+
+Android networking library appropriate to the existing project
+
+Existing application package and architecture, preserved where possible
+
+NLP and backend
+
+Python
+
+Existing NLP model and inference code
+
+FastAPI for backend APIs
+
+Pydantic for request/response validation
+
+SQLAlchemy and Alembic, or compatible existing equivalents, for database access and migrations
+
+Pytest for backend and NLP tests
+
+Database
+
+PostgreSQL
+
+Proper relational schema, constraints, indexes, and migrations
+
+Optional pgvector integration in a later phase if semantic document retrieval requires it
+
+External services
+
+Gmail API and Google OAuth for authorized email ingestion
+
+Notion API for timetable reading and synchronization
+
+Document text extraction and retrieval for study notes
+
+An LLM API or suitable local model for the notes-grounded chatbot
+
+Android notifications, with Firebase Cloud Messaging if remote push delivery is required
+
+Use environment variables for secrets. Document dependencies and account setup. Do not hardcode API keys, tokens, passwords, or production credentials.
+
+5. Architecture
+
+Implement the following architecture:
+
+Android application|| HTTPS / JSON REST APIvFastAPI backend|+---- Existing NLP inference module|+---- Email ingestion service|+---- Information extraction and event proposal service|+---- Notion synchronization service|+---- Notes retrieval and chatbot service|+---- Campus map data service|vPostgreSQL database
+
+External integrations:
+
+Gmail API
+
+Notion API
+
+LLM provider, if used
+
+Document storage
+
+Notification service, if enabled
+
+The Android app must not connect directly to PostgreSQL. It must not need to run Python or load the NLP model locally. The backend invokes the model and returns validated JSON responses.
+
+Keep the NLP module independently testable so improvements to the model do not require rewriting the mobile interface.
+
+6. Functional requirements
+
+Module A: NLP email classification — highest priority
+
+Create a reusable NLP service around Person 1's existing inference code.
+
+Required behavior:
+
+Accept email subject and body.
+
+Apply the existing preprocessing pipeline.
+
+Predict the email category.
+
+Predict importance.
+
+Return supported confidence scores.
+
+Validate inputs and handle empty or malformed messages.
+
+Preserve the model's actual label definitions.
+
+Record the model version alongside predictions.
+
+Potential categories include:EXAM, ASSIGNMENT, EVENT, DEADLINE, ACADEMIC, ADMINISTRATION, COMMITTEE, JOURNAL, QUERY, and TIMETABLE_CHANGE.
+
+These are proposed categories. Inspect the trained model and its labels before using them. Do not silently invent or remap labels that the model does not support.
+
+Use the actual importance levels supported by the existing model. Do not assume that MEDIUM is the only level or that HIGH/LOW already exist.
+
+Add an evaluation pipeline using a labeled dataset. Report:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+Per-class metrics
+
+Confusion matrix
+
+Number of evaluated samples
+
+Model and dataset versions
+
+Do not use the final test set to tune the model. Clearly distinguish synthetic-data performance from performance on real emails.
+
+Module B: Entity extraction and timetable-change detection
+
+Implement a separate extraction component after the initial classification flow works.
+
+Extract, when supported by the email:
+
+Event name
+
+Subject or course
+
+Date and time
+
+Deadline
+
+Room number
+
+Venue
+
+Old and new schedule details
+
+Relevant source email
+
+Start with deterministic parsing and rules for clearly stated dates and times. Use an entity extraction model if necessary and justified.
+
+Normalize dates and times consistently, including timezone handling.
+
+When an email suggests an examination, lecture, classroom, or timetable change:
+
+Save the original email.
+
+Save the classification and extracted entities.
+
+Create a proposed change.
+
+Preserve evidence from the email.
+
+Display the proposal for review in Android.
+
+Allow the student to confirm or reject it.
+
+Only apply the change after confirmation.
+
+Record synchronization success or failure.
+
+Do not automatically overwrite a timetable merely because a message contains a date or room number.
+
+Module C: Email ingestion and storage
+
+Start with synthetic email data.
+
+Next, integrate a dedicated Gmail test account containing forwarded college emails. Later, support direct Gmail connection if feasible.
+
+Implement:
+
+Google OAuth authorization
+
+Email metadata retrieval
+
+Message pagination
+
+Stable provider message IDs
+
+Duplicate detection
+
+Retry handling
+
+Email synchronization status
+
+Secure credential handling
+
+Categorized email retrieval
+
+Email detail retrieval
+
+Filtering by category, importance, and date
+
+Request only necessary permissions. Do not assume that forwarding preserves every original sender, thread, or header. Preserve available source information and handle forwarded-message parsing carefully.
+
+Never access a college mailbox without authorization. Keep real test emails private and use a dedicated account.
+
+Module D: Android dashboard and email UI
+
+Integrate with the existing Android Studio Java/XML application.
+
+Implement or adapt:
+
+Dashboard
+
+Email list
+
+Category filters
+
+Importance indicators
+
+Email detail screen
+
+Extracted event details
+
+Pending timetable-change proposals
+
+Loading states
+
+Empty states
+
+API error states
+
+Navigation between modules
+
+All displayed email and prediction data must come from the backend. Do not hardcode sample predictions into the final application.
+
+Synthetic data may be used for development and demonstration when clearly identified as test data.
+
+Module E: PostgreSQL database
+
+Design normalized tables for at least:
+
+users
+
+email_connections
+
+emails
+
+email_predictions
+
+extracted_entities
+
+events
+
+notion_connections
+
+notion_sync_records
+
+subjects
+
+notes
+
+document_chunks
+
+campus_floors
+
+campus_rooms
+
+campus_route_nodes
+
+campus_route_edges
+
+Adjust the schema based on the actual implementation. Document the relationships and indexes.
+
+Requirements:
+
+Use primary keys and foreign keys.
+
+Enforce appropriate uniqueness for provider message IDs.
+
+Include user ownership for private records.
+
+Store timestamps consistently.
+
+Use migrations.
+
+Support retries without duplicate event creation.
+
+Keep OAuth tokens and secrets out of plaintext database fields.
+
+Store document files in controlled file storage, with references in PostgreSQL.
+
+Prevent users from reading another user's emails, notes, or timetable records.
+
+Do not create unnecessary tables before the corresponding feature is implemented. Migrations should evolve the database safely.
+
+Module F: Notion timetable integration
+
+Notion is the primary timetable source for users who connect it.
+
+Implement:
+
+Notion authorization and integration configuration
+
+Timetable database selection
+
+Reading timetable records
+
+Mapping Notion page IDs to local event records
+
+Displaying timetable data in Android
+
+Refreshing data
+
+Recording synchronization status
+
+Handling edits, deleted pages, conflicts, and API errors
+
+Writing back student-confirmed schedule changes
+
+Begin with read-only synchronization. Add write-back only after reading and displaying the timetable works.
+
+Do not overwrite existing Notion information without confirmation. Make sure the integration has access to the selected pages/database. Provide a fallback local timetable for users without Notion.
+
+Module G: Notes library and chatbot
+
+Implement:
+
+Uploading supported PDF and text-based files
+
+File validation and size limits
+
+Text extraction
+
+Subject and category organization
+
+Document chunking
+
+Search and retrieval
+
+Chat API
+
+Answers grounded in retrieved notes
+
+Document/page citations when available
+
+Handling unsupported or unreadable files
+
+Per-user data isolation
+
+Use retrieval-augmented generation where appropriate.
+
+The chatbot must distinguish between:
+
+Answers grounded in uploaded notes
+
+Answers based on approved campus information
+
+General answers generated without supporting documents
+
+Do not fabricate quotations, page numbers, or document references. If the available evidence is insufficient, say so.
+
+Keep the notes module independent of the email-classification pipeline.
+
+Module H: Indoor college map
+
+The college has one building, and photographs of the floor plans posted beside each floor are available.
+
+Do not invent a generic map or assume exact room locations.
+
+Implement:
+
+A floor selector
+
+A zoomable and pannable floor-plan viewer
+
+Room search
+
+Room information
+
+Room overlays or selectable regions
+
+Floor metadata
+
+Optional route highlighting along mapped corridors
+
+Stairs, lifts, entrances, and connections where identifiable
+
+Use the supplied floor-plan images as the reference. If the images have not yet been added to the repository, create the feature with a documented placeholder and a clear process for importing and calibrating the actual images.
+
+Use PostgreSQL for room and route metadata. Store image files separately and reference them in the database.
+
+For route finding, model walkable corridors as connected nodes and edges. Do not draw routes through walls. Verify room coordinates and paths against the actual floor plans.
+
+Live indoor position tracking is not required for the first version.
+
+Module I: Authentication and security
+
+Implement appropriate authentication for the project and enforce user ownership on private endpoints.
+
+Requirements:
+
+Secure password handling if password-based authentication is used
+
+OAuth security for external providers
+
+Token protection
+
+Input validation
+
+API error handling
+
+Rate limiting where appropriate
+
+File upload validation
+
+Secret management
+
+Logging without unnecessary sensitive content
+
+User data deletion and account disconnection workflows
+
+A single test account is acceptable during early development, but the architecture must not expose all users' data to every authenticated user.
+
+7. API contract
+
+Create versioned endpoints under /api/v1.
+
+Suggested routes:
+
+POST /api/v1/auth/registerPOST /api/v1/auth/loginGET /api/v1/dashboard
+
+GET /api/v1/emailsGET /api/v1/emails/{id}POST /api/v1/emails/sync
+
+POST /api/v1/nlp/predict
+
+GET /api/v1/eventsGET /api/v1/events/proposalsPOST /api/v1/events/{id}/confirmPOST /api/v1/events/{id}/reject
+
+POST /api/v1/notion/connectGET /api/v1/notion/timetablePOST /api/v1/notion/sync
+
+POST /api/v1/notes/uploadGET /api/v1/notesPOST /api/v1/chat
+
+GET /api/v1/campus/floorsGET /api/v1/campus/floors/{id}/roomsGET /api/v1/campus/searchGET /api/v1/campus/routes
+
+You may refine these routes as needed, but document every final endpoint, authentication requirement, request body, response body, status code, and error response. Generate and maintain OpenAPI documentation.
+
+Keep the NLP prediction contract compatible with the existing model. Add fields only when their implementation exists, and write tests for the contract.
+
+8. Implementation phases
+
+Phase 0: Repository audit
+
+Inspect existing files and run current code. Produce a baseline report and plan.
+
+Phase 1: NLP stabilization and evaluation
+
+Preserve Person 1's model, standardize inference, evaluate performance, and add tests.
+
+Phase 2: Backend and database
+
+Set up FastAPI, PostgreSQL, migrations, NLP service integration, email storage, and APIs.
+
+Phase 3: Android integration
+
+Connect Android to the backend and implement the dashboard and categorized email interface.
+
+Phase 4: Real email testing
+
+Integrate authorized Gmail access, ingest forwarded test emails, deduplicate messages, and evaluate the NLP model on manually labeled real data.
+
+Phase 5: Entity extraction and timetable-change proposals
+
+Extract schedule information, display evidence, and require confirmation for changes.
+
+Phase 6: Notion integration
+
+Read the timetable, map page IDs, synchronize records, and safely write back confirmed changes.
+
+Phase 7: Notes and chatbot
+
+Implement file processing, retrieval, source-grounded responses, and private notes.
+
+Phase 8: Indoor campus map
+
+Integrate actual floor plans, floor selection, room search, and verified route highlighting.
+
+Phase 9: Full testing and documentation
+
+Test the complete system, resolve integration failures, evaluate NLP, document setup, and prepare the project demonstration.
+
+Do not attempt to implement every module as an untested one-shot code dump. Implement in phases, maintain a working repository, and preserve completed work.
+
+9. Required completion criteria
+
+The core project is complete only when this end-to-end workflow works:
+
+A synthetic or authorized test email is ingested.
+
+The existing NLP model predicts its category and importance.
+
+The prediction and email record are stored in PostgreSQL.
+
+The backend returns the prediction through a documented API.
+
+The Android app displays the email and its actual prediction.
+
+The test workflow can be repeated without creating duplicate records.
+
+NLP evaluation results can be reproduced from documented data and commands.
+
+For full project completion, the additional modules must also have their own working tests:
+
+Entity extraction and confirmed timetable changes
+
+Notion timetable synchronization
+
+Notes retrieval and chatbot
+
+Indoor floor-plan map and room search
+
+Authentication and access-control tests
+
+A feature that depends on unavailable credentials, an LLM account, Notion permissions, or missing floor-plan images must be clearly marked as pending configuration rather than falsely reported as complete.
+
+10. Testing requirements
+
+Write automated tests for:
+
+NLP inference and malformed inputs
+
+Category/importance schema validation
+
+Database persistence and retrieval
+
+Duplicate email handling
+
+API authentication and authorization
+
+User-level data isolation
+
+Entity extraction and date normalization
+
+Timetable proposal confirmation/rejection
+
+Notion synchronization logic
+
+Document retrieval and citation behavior
+
+Room search and route connectivity
+
+Mock external APIs in unit tests. Use a separate test database for integration tests.
+
+Test the real NLP pipeline on a held-out dataset. Do not use fabricated performance numbers.
+
+Document known limitations and any unimplemented integrations.
+
+11. Required deliverables
+
+Produce:
+
+Complete working source code in the existing repository.
+
+Updated Android Studio project.
+
+FastAPI backend.
+
+PostgreSQL schema and migrations.
+
+Reusable NLP integration module.
+
+Automated tests.
+
+README.md with installation and execution instructions.
+
+.env.example without real credentials.
+
+API documentation.
+
+Database ER diagram or equivalent schema documentation.
+
+Architecture diagram.
+
+NLP evaluation report.
+
+Synthetic test dataset or generation script.
+
+Instructions for authorized Gmail setup.
+
+Instructions for Notion integration.
+
+Instructions for importing and calibrating actual campus floor plans.
+
+Troubleshooting guide.
+
+A list of completed features, pending setup, and known limitations.
+
+12. Development rules
+
+Inspect before editing.
+
+Preserve working code and existing package names.
+
+Reuse Person 1's model.
+
+Do not fabricate results, data, API responses, or evaluation metrics.
+
+Do not hardcode credentials or private user information.
+
+Do not silently discard existing functionality.
+
+Do not mark a feature complete without testing it.
+
+Use small, maintainable modules rather than a single giant source file.
+
+Keep Android API calls consistent with backend schemas.
+
+Add comments where they clarify non-obvious logic.
+
+Provide exact commands to run the backend, migrations, tests, and Android application.
+
+Explain configuration that requires human approval or external credentials.
+
+After each phase, report changed files, commands run, test results, failures, and the next phase.
+
+Fix test failures before proceeding when practical.
+
+Do not stop after producing a plan. Continue implementing the phase that is currently authorized and feasible.
+
+13. Start now
+
+Begin with Phase 0. Inspect the repository and produce the audit report.
+
+Then implement the phases in order, prioritizing the working NLP-to-database-to-Android pipeline. Keep the application runnable throughout development.
+
+If a critical dependency is missing, identify it precisely, implement any independent work that can safely proceed, and document the required action instead of inventing credentials or pretending the integration works.
+
+The final objective is a genuinely integrated NLP-based Campus AI application, not just a collection of separate code samples.
+
+10. How to use this prompt effectively
+
+Even if your goal is to get the entire codebase generated, use an agent that can inspect and edit your repository, not only answer in a chat window. Give it access to the existing NLP files and Android Studio project.
+
+A sensible order is:
+
+Back up your existing project before the agent modifies files.
+
+Give it the master prompt and let it audit the repository.
+
+Have it finish and test Phases 0–3 before integrating real email accounts.
+
+Add credentials and external integrations only when their phases are reached.
+
+Test each phase on your machine and keep a working copy before moving forward.
+
+Do not give an AI agent your real passwords, OAuth tokens, or private college emails unnecessarily. Use environment variables and a dedicated test account.
+
+11. One important recommendation for your academic project
+
+Because this is an NLP semester project as well as a mobile application development project, make sure your final submission clearly demonstrates two things:
+
+NLP contribution: classification, importance prediction, information extraction, evaluation metrics, and analysis of errors.
+
+Application contribution: a functioning Android app connected to a backend, with real data flow and integrated student features.
+
+The strongest demonstration will be an email entering the system, the existing NLP model processing it, its result being saved and displayed in Android, and an extracted timetable change being proposed for confirmation.
+
+That single end-to-end demonstration will connect the work of all three team members and show that Campus AI is one integrated project rather than separate components.

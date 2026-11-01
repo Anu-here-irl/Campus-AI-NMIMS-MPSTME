@@ -1,0 +1,206 @@
+[
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_activity_note_editor.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\activity_note_editor.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_star_outline.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_star_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_bg_timeline_dot.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\bg_timeline_dot.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_bg_pill_search.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\bg_pill_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_nav_chat.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_nav_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_activity_notes.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\activity_notes.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_chevron_left.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_chevron_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_nav_dashboard.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_nav_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_clock.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_clock.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_proposal.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_proposal.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_bg_rounded_card.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\bg_rounded_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_chat_user.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_chat_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_bg_category_badge.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\bg_category_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_bg_quick_action.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\bg_quick_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_location.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_format_underlined.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_format_underlined.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_format_italic.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_format_italic.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_note.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_note.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_format_bold.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_format_bold.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_fragment_campus_map.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\fragment_campus_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_room_search_result.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_room_search_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_event.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_fragment_chat.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\fragment_chat.xml"
+    },
+    {
+        "merged": "com.college.campusai.app-merged_res-32:/layout_fragment_dashboard.xml.flat",
+        "source": "com.college.campusai.app-main-34:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_fragment_timetable.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\fragment_timetable.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_notes.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_notes.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_chevron_right.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_chevron_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_book.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_book.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_bg_chat_bot.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\bg_chat_bot.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_star_filled.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_star_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_send.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_send.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_item_border_unselected.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\item_border_unselected.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_email.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_nav_timetable.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_nav_timetable.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_nav_emails.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_nav_emails.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_nav_map.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_nav_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_room.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_room.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_sparkle.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_sparkle.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\color_bottom_nav_colors.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\color\\bottom_nav_colors.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_activity_email_detail.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\activity_email_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_fragment_emails.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\fragment_emails.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_fragment_dashboard.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\ic_arrow_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\layout_item_chat_bot.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\layout\\item_chat_bot.xml"
+    },
+    {
+        "merged": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-merged_res-32:\\drawable_bg_chat_user.xml.flat",
+        "source": "C:\\Users\\anjal\\.gradle\\daemon\\8.5\\com.college.campusai.app-main-34:\\drawable\\bg_chat_user.xml"
+    }
+]

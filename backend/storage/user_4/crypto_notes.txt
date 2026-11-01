@@ -1,0 +1,2 @@
+# Advanced Cryptography
+RSA algorithm is an asymmetric cryptographic algorithm relying on the practical difficulty of factoring the product of two large prime numbers. Key generation produces a public key (e, n) and a private decryption key (d, n).

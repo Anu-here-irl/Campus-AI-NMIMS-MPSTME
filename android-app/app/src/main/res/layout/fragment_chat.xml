@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- Header App Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/card_bg"
+        app:strokeWidth="1dp"
+        app:strokeColor="#E2E8F0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_sparkle"
+                app:tint="@color/primary"
+                android:background="@drawable/bg_quick_action"
+                android:padding="8dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="CampusAI" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CampusAI Assistant"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grounded in your course syllabus &amp; notes"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="1dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RAG Active"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/status_confirmed"
+                android:background="@drawable/bg_category_badge"
+                android:backgroundTint="@color/status_confirmed_bg"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Chat Messages RecyclerView Area -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_chat_messages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:clipToPadding="false" />
+
+        <!-- Empty State Suggestions -->
+        <LinearLayout
+            android:id="@+id/layout_chat_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingHorizontal="32dp">
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_sparkle"
+                app:tint="@color/primary"
+                android:background="@drawable/bg_quick_action"
+                android:padding="14dp"
+                android:layout_marginBottom="12dp"
+                android:contentDescription="Study AI" />
+
+            <TextView
+                android:id="@+id/tv_empty_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How can I help you today?"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ask any question naturally. Campus AI will answer your academic queries, help with study concepts, check class schedules, or locate campus facilities."
+                android:textSize="13sp"
+                android:textAlignment="center"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="12dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Bottom Message Input Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/card_bg"
+        android:elevation="8dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_pill_search"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="6dp">
+
+            <EditText
+                android:id="@+id/et_chat_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:maxHeight="100dp"
+                android:background="@null"
+                android:hint="@string/chat_hint"
+                android:textSize="14sp"
+                android:inputType="textMultiLine|textCapSentences"
+                android:textColor="@color/text_primary" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_chat_send"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:visibility="gone"
+            android:layout_marginStart="8dp" />
+
+        <ImageButton
+            android:id="@+id/btn_send_chat"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_send"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/primary"
+            android:contentDescription="Send Message"
+            android:layout_marginStart="6dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

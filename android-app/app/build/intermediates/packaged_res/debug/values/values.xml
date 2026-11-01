@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#2563EB</color>
+    <color name="background">#F6F7FB</color>
+    <color name="black">#000000</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="chip_stroke">#CBD5E1</color>
+    <color name="divider">#E2E8F0</color>
+    <color name="primary">#1A237E</color>
+    <color name="primary_dark">#0D1642</color>
+    <color name="primary_light">#E8EAF6</color>
+    <color name="priority_high">#DC2626</color>
+    <color name="priority_high_bg">#FEE2E2</color>
+    <color name="priority_low">#16A34A</color>
+    <color name="priority_low_bg">#DCFCE7</color>
+    <color name="priority_medium">#D97706</color>
+    <color name="priority_medium_bg">#FEF3C7</color>
+    <color name="secondary">#3949AB</color>
+    <color name="shimmer_bg">#E2E8F0</color>
+    <color name="status_confirmed">#16A34A</color>
+    <color name="status_confirmed_bg">#DCFCE7</color>
+    <color name="status_proposed">#7C3AED</color>
+    <color name="status_proposed_bg">#F3E8FF</color>
+    <color name="status_rejected">#DC2626</color>
+    <color name="status_rejected_bg">#FEE2E2</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="tag_assignment">#2563EB</color>
+    <color name="tag_assignment_bg">#DBEAFE</color>
+    <color name="tag_event">#8B5CF6</color>
+    <color name="tag_event_bg">#EDE9FE</color>
+    <color name="tag_exam">#7C3AED</color>
+    <color name="tag_exam_bg">#F3E8FF</color>
+    <color name="tag_general">#475569</color>
+    <color name="tag_general_bg">#F1F5F9</color>
+    <color name="tag_notice">#D97706</color>
+    <color name="tag_notice_bg">#FEF3C7</color>
+    <color name="tag_timetable">#2E7D32</color>
+    <color name="tag_timetable_bg">#E8F5E9</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="white">#FFFFFF</color>
+    <string name="add_note">Add Note</string>
+    <string name="app_name">Campus AI</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_login">Sign In</string>
+    <string name="btn_register">Create Account</string>
+    <string name="btn_reject">Reject</string>
+    <string name="btn_sync_calendar">Sync Google Calendar</string>
+    <string name="cancel">Cancel</string>
+    <string name="chat_hint">Ask CampusAI anything...</string>
+    <string name="daily_view">Daily View</string>
+    <string name="delete_note">Delete</string>
+    <string name="email_details">Email Details</string>
+    <string name="email_hint">Student Email</string>
+    <string name="high_priority_emails_title">Important Notices</string>
+    <string name="important_alerts">Important Alerts</string>
+    <string name="login_subtitle">Intelligent Student Assistant</string>
+    <string name="login_title">Campus AI Portal</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_emails">Emails</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_notes">Notes</string>
+    <string name="nav_timetable">Timetable</string>
+    <string name="next_class">Next Class</string>
+    <string name="note_content_hint">Start typing your study notes here...</string>
+    <string name="password_hint">Password</string>
+    <string name="pending_proposals_title">Detected Schedule Changes</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="save_note">Save</string>
+    <string name="search_emails_hint">Search emails...</string>
+    <string name="search_notes_hint">Search notes...</string>
+    <string name="search_rooms_hint">Search room or location...</string>
+    <string name="server_url_hint">Backend URL (e.g. http://10.0.2.2:8000)</string>
+    <string name="todays_schedule">Today\'s Schedule</string>
+    <string name="upcoming_schedule_title">Upcoming Schedule</string>
+    <string name="verified_plan">✓ Verified Plan</string>
+    <string name="view_all">View all ></string>
+    <string name="weekly_view">Weekly View</string>
+    <style name="Theme.CampusAI" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:navigationBarColor">@color/card_bg</item>
+        <item name="cardViewStyle">@style/Widget.CampusAI.Card</item>
+    </style>
+    <style name="Theme.CampusAI.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:navigationBarColor">@color/card_bg</item>
+        <item name="cardViewStyle">@style/Widget.CampusAI.Card</item>
+    </style>
+    <style name="Widget.CampusAI.Card" parent="CardView">
+        <item name="cardCornerRadius">14dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/card_bg</item>
+        <item name="cardMaxElevation">4dp</item>
+    </style>
+    <style name="Widget.CampusAI.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">@color/primary_light</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+</resources>
