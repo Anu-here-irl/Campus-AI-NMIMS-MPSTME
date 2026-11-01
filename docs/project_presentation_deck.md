@@ -1,7 +1,7 @@
 # Campus AI — Project Presentation & Viva Defense Guide
 ## Autonomous Academic Operations & Intelligent Student Study Assistant
 
-**Course:** B.Tech Computer Engineering (Semester 5) — Natural Language Processing  
+**Course:** MBATech AI (Semester 5) — Natural Language Processing  
 **Academic Year:** 2026–2027  
 **Project Folder:** `CAMPUS AI`  
 **Defense Format:** 15-Slide Technical Presentation + Viva Q&A Guide  
