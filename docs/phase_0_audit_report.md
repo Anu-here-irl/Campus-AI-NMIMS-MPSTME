@@ -1,7 +1,7 @@
 # Phase 0 Audit Report: Campus AI Project
 
 **Date:** 2026-10-26  
-**Auditor:** Antigravity AI  
+**Auditor:** Anjali Upadhyay, Diya Rajpal, Lakshya Gupta  
 **Scope:** Repository inventory, baseline model verification, gap analysis, and architectural plan.
 
 ---
@@ -11,36 +11,36 @@
 Campus AI is an NLP-powered student campus assistant designed to ingest, classify, prioritize, and extract actionable information from college communications (such as exams, timetable shifts, and deadlines), exposing these capabilities through a FastAPI backend to an Android mobile application and Notion workspace.
 
 An audit of the workspace reveals:
-1. **NLP Foundation (Person 1):** A mature, verified NLP inference pipeline exists in [`NLP PROJECT/campusai_artifacts`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts). The unit tests pass 100% (12/12 tests in 2.6s).
-2. **Backend & Database:** No backend services or database schemas currently exist. These will be constructed in [`CAMPUS AI/backend`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/CAMPUS%20AI/backend) using **FastAPI**, **Pydantic v2**, and **SQLAlchemy/Alembic** for PostgreSQL.
-3. **Android Client:** No mobile application code exists in the workspace yet. The complete Android client architecture (Java/XML) will be scaffolded in [`CAMPUS AI/android-app`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/CAMPUS%20AI/android-app).
+1. **NLP Foundation (Person 1):** A mature, verified NLP inference pipeline exists in [`NLP PROJECT/campusai_artifacts`]. The unit tests pass 100% (12/12 tests in 2.6s).
+2. **Backend & Database:** No backend services or database schemas currently exist. These will be constructed in [`CAMPUS AI/backend`] using **FastAPI**, **Pydantic v2**, and **SQLAlchemy/Alembic** for PostgreSQL.
+3. **Android Client:** No mobile application code exists in the workspace yet. The complete Android client architecture (Java/XML) will be scaffolded in 
 
 ---
 
 ## 2. Inventory of Existing NLP Assets (Person 1)
 
-Located in: [`NLP PROJECT/campusai_artifacts/`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts)
+Located in: [`NLP PROJECT/campusai_artifacts/`]
 
 ### 2.1 Model Artifacts (`models/`)
 | Artifact File | Role in Pipeline | Classes / Features |
 |---|---|---|
-| [`category_logreg_tfidf.joblib`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/models/category_logreg_tfidf.joblib) | Category Classifier | 12 classes (`ACADEMIC`, `ADMINISTRATIVE`, `ASSIGNMENT`, `ATTENDANCE`, `CLASSROOM / TIMETABLE`, `EVENT`, `EXAM`, `FEES`, `GENERAL`, `PLACEMENT`, `REGISTRATION`, `WORKSHOP`) |
-| [`tfidf_vectorizer.joblib`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/models/tfidf_vectorizer.joblib) | TF-IDF for Category Model | Text unigrams/bigrams on cleaned email text |
-| [`sender_role_onehot.joblib`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/models/sender_role_onehot.joblib) | One-Hot Encoder | Encodes `sender_role` (`FACULTY`, `ADMIN`, etc.) |
-| [`importance_inference_logreg.joblib`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/models/importance_inference_logreg.joblib) | Inference-safe Importance Classifier | 3 classes (`HIGH`, `LOW`, `MEDIUM`). Trained **without** unavailable gold flags |
-| [`importance_inference_tfidf.joblib`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/models/importance_inference_tfidf.joblib) | TF-IDF for Importance Model | Text features for importance rating |
-| [`importance_inference_sender_role.joblib`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/models/importance_inference_sender_role.joblib) | Sender One-Hot Encoder | Sender features for importance model |
-| [`inference_feature_manifest.json`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/models/inference_feature_manifest.json) | Specification Manifest | Maps model dependencies and training parameters |
+| [`category_logreg_tfidf.joblib`] | Category Classifier | 12 classes (`ACADEMIC`, `ADMINISTRATIVE`, `ASSIGNMENT`, `ATTENDANCE`, `CLASSROOM / TIMETABLE`, `EVENT`, `EXAM`, `FEES`, `GENERAL`, `PLACEMENT`, `REGISTRATION`, `WORKSHOP`) |
+| [`tfidf_vectorizer.joblib`] | TF-IDF for Category Model | Text unigrams/bigrams on cleaned email text |
+| [`sender_role_onehot.joblib`]| One-Hot Encoder | Encodes `sender_role` (`FACULTY`, `ADMIN`, etc.) |
+| [`importance_inference_logreg.joblib`] | Inference-safe Importance Classifier | 3 classes (`HIGH`, `LOW`, `MEDIUM`). Trained **without** unavailable gold flags |
+| [`importance_inference_tfidf.joblib`] | TF-IDF for Importance Model | Text features for importance rating |
+| [`importance_inference_sender_role.joblib`]| Sender One-Hot Encoder | Sender features for importance model |
+| [`inference_feature_manifest.json`] | Specification Manifest | Maps model dependencies and training parameters |
 
 ### 2.2 Datasets & Preprocessing
-* **Raw Dataset:** [`CampusAI_raw_dataset.csv`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/CampusAI_raw_dataset.csv) (885 KB)
-* **Cleaned & Preprocessed:** [`CampusAI_cleaned_dataset.csv`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/CampusAI_cleaned_dataset.csv) & [`CampusAI_preprocessed_dataset.csv`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/CampusAI_preprocessed_dataset.csv)
-* **Full Pipeline Notebook/Script:** [`CampusAI_Preprocessing_Pipeline.py`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/CampusAI_Preprocessing_Pipeline.py)
+* **Raw Dataset:** [`CampusAI_raw_dataset.csv`] (885 KB)
+* **Cleaned & Preprocessed:** [`CampusAI_cleaned_dataset.csv`] & [`CampusAI_preprocessed_dataset.csv`]\
+* **Full Pipeline Notebook/Script:** [`CampusAI_Preprocessing_Pipeline.py`]
 * **Information Extraction Datasets:**
-  * [`classroom_change_qa_dataset.jsonl`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/nlp_tasks/classroom_change_qa_dataset.jsonl)
-  * [`deadline_qa_dataset.jsonl`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/nlp_tasks/deadline_qa_dataset.jsonl)
-  * [`ner_dataset.jsonl`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/nlp_tasks/ner_dataset.jsonl)
-  * [`action_extraction_dataset.csv`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/nlp_tasks/action_extraction_dataset.csv)
+  * [`classroom_change_qa_dataset.jsonl`]
+  * [`deadline_qa_dataset.jsonl`]
+  * [`ner_dataset.jsonl`]
+  * [`action_extraction_dataset.csv`]
 
 ### 2.3 Evaluated Baseline Performance
 From `NLP PROJECT/campusai_artifacts/model_comparison_table.csv` and evaluation reports:
@@ -51,7 +51,7 @@ From `NLP PROJECT/campusai_artifacts/model_comparison_table.csv` and evaluation 
 
 ## 3. Baseline Verification Test Run
 
-The existing unit tests in [`test_campusai_inference.py`](file:///c:/Users/anjal/OneDrive/Desktop/COLLEGE/SEM%205/NLP/NLP_PROJECT_2026/NLP%20PROJECT/campusai_artifacts/test_campusai_inference.py) were executed:
+The existing unit tests in [`test_campusai_inference.py`] were executed:
 ```powershell
 python -m unittest discover -s "NLP PROJECT/campusai_artifacts" -p "test_campusai_inference.py" -v
 ```
