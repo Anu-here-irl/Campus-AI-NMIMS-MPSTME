@@ -5,6 +5,7 @@
 **Academic Year:** 2026–2027  
 **Project Repository:** `CAMPUS AI`  
 **Authors:** Anjali Upadhyay, Diya Rajpal, Lakshya Gupta
+
 **Evaluation Date:** October 2026  
 
 ---
