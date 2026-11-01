@@ -1,7 +1,7 @@
 # Phase 4 — Real Email Ingestion & Testing Evaluation Report
 
 **Date:** 2026-10-27
-**Target Senders:** `ANJALI.UPADHYAY43@nmims.in`, `LAKSH.GUPTA28@nmims.in`
+**Target Senders:** `ANJALI.UPADHYAY43@----.in`, `LAKSH.GUPTA28@----.in`
 **Total Processed Items:** 347 real academic notices
 
 ---
@@ -71,7 +71,8 @@ Across all 347 real notices, the regex and rule-based entity extractor extracted
 | 22 | Attachment: Re: MPSTME Even SEM Re exam Time table 2025- 2026.eml | Re: MPSTME Even SEM Re exam Time table 2 | **EXAM** | 12.6% | HIGH | None | DATE:2026-06-17, DATE:2026-06-19, DATE:2026-06-17 |
 | 23 | Attachment: Narsee Monjee Institute of Management Studies (NMIMS) Second Notice: Professional Development Program under META SkillsBuild.eml | Narsee Monjee Institute of Management St | **ATTENDANCE** | 10.5% | MEDIUM | None | ROOM:Online, ROOM:online |
 | 24 | Attachment: FW: Revised computer based even semester re-exam time table.eml | FW: Revised computer based even semester | **EXAM** | 13.0% | HIGH | YES: Class / Examination Schedule Change (New Date) | DATE:2026-06-17, DATE:2026-06-19, DATE:2026-07-04 |
-| 25 | Attachment: FW: Bloomberg Education Webinar Series – June Edition.eml | FW: Bloomberg Education Webinar Series – | **EVENT** | 11.5% | HIGH | None | ROOM:room
+| 25 | Attachment: FW: Bloomberg Education Webinar Series – June Edition.eml | FW: Bloomberg Education Webinar Series – | **EVENT** | 11.5% | HIGH | None | ROOM:room
+
 Explore, ROOM:room learning, ROOM:online |
 | 26 | Attachment: New Announcement: Revised MPSTME Computer based  Re-exam Time Table - Even semester 2025-26 send  for course.eml | New Announcement: Revised MPSTME Compute | **EXAM** | 11.8% | HIGH | None |  |
 | 27 | Attachment: New Announcement: MPSTME Computer based  Re-exam Time Table - Even semester 2025-26 send  for course.eml | New Announcement: MPSTME Computer based  | **EXAM** | 11.4% | HIGH | None |  |
@@ -134,8 +135,10 @@ Explore, ROOM:room learning, ROOM:online |
 | 84 | Attachment: MEHEK SINGH - 70372200030 shared the folder "IEC 2025-26" with you.eml | MEHEK SINGH - 70372200030 shared the fol | **ASSIGNMENT** | 11.4% | MEDIUM | None |  |
 | 85 | Attachment: Classroom for OE2 Life Skills.eml | Classroom for OE2 Life Skills  | **GENERAL** | 13.3% | HIGH | None | TIME:00:00 PM, TIME:00:00 PM, TIME:00:00 PM |
 | 86 | Attachment: Monthly Thematic e-Books Display on "Kargil Vijay Diwas – 26 July ".eml | Monthly Thematic e-Books Display on "Kar | **EXAM** | 10.8% | HIGH | None | DATE:2026-07-26, DATE:2026-07-26, DATE:2026-07-26 |
-| 87 | Attachment: OE-1 : Basic Decision Making with Spreadsheet theory / practical cancellation.eml | OE-1 : Basic Decision Making with Spread | **EVENT** | 11.3% | HIGH | YES: Kindly note Schedule Change (New Date) | ROOM:room
-
+| 87 | Attachment: OE-1 : Basic Decision Making with Spreadsheet theory / practical cancellation.eml | OE-1 : Basic Decision Making with Spread | **EVENT** | 11.3% | HIGH | YES: Kindly note Schedule Change (New Date) | ROOM:room
+
+
+
  CC-803, SUBJECT:Kindly note |
 | 88 | Attachment: Advisory for Students to deal with Cyber Fraud / Unauthorized Calls.eml | Advisory for Students to deal with Cyber | **GENERAL** | 14.0% | LOW | None |  |
 | 89 | Attachment: Venue change for OE2 subjects - Sem V.eml | Venue change for OE2 subjects - Sem V | **GENERAL** | 12.3% | HIGH | None | ROOM:room change |
@@ -157,9 +160,12 @@ Explore, ROOM:room learning, ROOM:online |
 | 105 | Attachment: RE: Introduction to ERP I and II.eml | RE: Introduction to ERP I and II  | **REGISTRATION** | 10.7% | HIGH | None | TIME:00:00 PM |
 | 106 | Attachment: OE1 -Sustainable Energy Technologies lecture cancellation and re-schedule details.eml | OE1 -Sustainable Energy Technologies lec | **ACADEMIC** | 11.6% | HIGH | YES: Energy Technologies Schedule Change (New Date) | DATE:2026-07-20, DATE:2026-07-21, DATE:2026-08-04 |
 | 107 | Attachment: OE1 -Basic decision making with spreadsheet lecture cancelled on 20.07.2026 - Sem V.eml | OE1 -Basic decision making with spreadsh | **ACADEMIC** | 12.2% | HIGH | YES: Kindly note Schedule Change (New Date) | SUBJECT:Kindly note |
-| 108 | Attachment: Change in lab venue- MBA Tech & B Tech-AI, Sem V w.e.f. 20.07.2026.eml | Change in lab venue- MBA Tech & B Tech-A | **GENERAL** | 11.3% | HIGH | None | ROOM:Lab
-4, ROOM:Lab
-CL, ROOM:Lab
+| 108 | Attachment: Change in lab venue- MBA Tech & B Tech-AI, Sem V w.e.f. 20.07.2026.eml | Change in lab venue- MBA Tech & B Tech-A | **GENERAL** | 11.3% | HIGH | None | ROOM:Lab
+
+4, ROOM:Lab
+
+CL, ROOM:Lab
+
 2 |
 | 109 | Attachment: You have been added to a class team in Microsoft Teams.eml | You have been added to a class team in M | **EVENT** | 11.2% | HIGH | None | ROOM:online, SUBJECT:You have been added to a |
 | 110 | Attachment: Greetings and Introductory Message : Prof. Sougata Ray, Vice Chancellor.eml | Greetings and Introductory Message : Pro | **EXAM** | 11.2% | MEDIUM | None | SUBJECT:Artificial Intelligence |
@@ -184,8 +190,10 @@ CL, ROOM:Lab
 | 129 | Attachment: Attendance Report_70512400043.eml | Attendance Report_70512400043 | **ATTENDANCE** | 15.7% | HIGH | None |  |
 | 130 | Attachment: Your sign-in code 296897 for Hack2skill.eml | Your sign-in code 296897 for Hack2skill | **EXAM** | 11.3% | HIGH | None |  |
 | 131 | Attachment: SRG Projects- Invitation to Join the WhatsApp Group.eml | SRG Projects- Invitation to Join the Wha | **ATTENDANCE** | 11.7% | HIGH | None | DATE:2026-09-24, DATE:2026-09-18, DATE:2026-09-10 |
-| 132 | Attachment: OE-1 : Basic Decision Making with Spreadsheet Pr Batch 2 re-schedule.eml | OE-1 : Basic Decision Making with Spread | **EVENT** | 11.3% | HIGH | YES: Kindly note Schedule Change (New Date) | ROOM:room
-
+| 132 | Attachment: OE-1 : Basic Decision Making with Spreadsheet Pr Batch 2 re-schedule.eml | OE-1 : Basic Decision Making with Spread | **EVENT** | 11.3% | HIGH | YES: Kindly note Schedule Change (New Date) | ROOM:room
+
+
+
  CL-706, SUBJECT:Kindly note |
 | 133 | Attachment: Online Meeting for Discussion on SRG Projects.eml | Online Meeting for Discussion on SRG Pro | **ATTENDANCE** | 11.6% | HIGH | None | DATE:2026-09-24, DATE:2026-09-18, DATE:2026-09-10 |
 | 134 | Attachment: OE2 Management through Movies –DIV A lecture cancellation on 01.10.2026.eml | OE2 Management through Movies –DIV A lec | **ACADEMIC** | 11.6% | HIGH | None | DATE:2026-10-01, TIME:06:00 PM, SUBJECT:DIV A |
@@ -203,11 +211,14 @@ CL, ROOM:Lab
 | 146 | Attachment: Problem Statements for Developing Innovative Solutions – Presentation Opportunity.eml | Problem Statements for Developing Innova | **ATTENDANCE** | 11.5% | MEDIUM | None | DATE:2026-09-24, DATE:2026-09-18, DATE:2026-09-10 |
 | 147 | Attachment: DAA practical cancellation and re-schedule details - MBA Tech-AI, Sem V.eml | DAA practical cancellation and re-schedu | **EXAM** | 11.6% | HIGH | YES: DAA Schedule Change (New Date) | TIME:04:00 PM, TIME:10:00 AM, SUBJECT:DAA |
 | 148 | Attachment: Deep Learning practical B2 batch cancelled on 17.09.2026 - MBA Tech-AI, Sem V.eml | Deep Learning practical B2 batch cancell | **EXAM** | 11.4% | HIGH | YES: Deep Learning Schedule Change (New Date) | DATE:2026-09-17, TIME:12:00 PM, TIME:02:00 PM |
-| 149 | Attachment: OE2 Life Skills extra tutorial schedule.eml | OE2 Life Skills extra tutorial schedule | **GENERAL** | 12.4% | HIGH | YES: Class / Examination Schedule Change (New Date) | TIME:06:00 PM, ROOM:room
+| 149 | Attachment: OE2 Life Skills extra tutorial schedule.eml | OE2 Life Skills extra tutorial schedule | **GENERAL** | 12.4% | HIGH | YES: Class / Examination Schedule Change (New Date) | TIME:06:00 PM, ROOM:room
+
  CR |
 | 150 | Attachment: OE1 Drone Technology practical cancelled for today.eml | OE1 Drone Technology practical cancelled | **EXAM** | 10.9% | HIGH | YES: Drone Technology Schedule Change (New Date) | SUBJECT:Drone Technology |
-| 151 | Attachment: OE1 Basic Decision Making with Spreadsheet /Pr. Batch-1 re-schedule details.eml | OE1 Basic Decision Making with Spreadshe | **EVENT** | 12.2% | HIGH | YES: Class / Examination Schedule Change (New Date) | ROOM:room
-
+| 151 | Attachment: OE1 Basic Decision Making with Spreadsheet /Pr. Batch-1 re-schedule details.eml | OE1 Basic Decision Making with Spreadshe | **EVENT** | 12.2% | HIGH | YES: Class / Examination Schedule Change (New Date) | ROOM:room
+
+
+
  CL-706 |
 | 152 | Attachment: OE 2 RES lecture cancelled on 15.09.2026.eml | OE 2 RES lecture cancelled on 15.09.2026 | **ACADEMIC** | 10.7% | HIGH | YES: RES Schedule Change (New Date) | SUBJECT:RES |
 | 153 | Attachment: OE1 Introduction to GIS lecture cancelled on 15.09.2026 - Sem V.eml | OE1 Introduction to GIS lecture cancelle | **ACADEMIC** | 11.8% | HIGH | YES: Introduction to GIS Schedule Change (New Date) | TIME:05:00 PM, SUBJECT:Introduction to GIS |
@@ -216,12 +227,15 @@ CL, ROOM:Lab
 | 156 | Attachment: OE2-Financial derivatives –DIV A extra lecture.eml | OE2-Financial derivatives –DIV A extra l | **GENERAL** | 11.4% | HIGH | YES: DIV A extra Schedule Change (New Date) | TIME:06:00 PM, SUBJECT:DIV A extra |
 | 157 | Attachment: OE2-FIMIS - Div A lecture cancelled on 10.09.2026.eml | OE2-FIMIS - Div A lecture cancelled on 1 | **ACADEMIC** | 11.3% | HIGH | YES: Div A Schedule Change (New Date) | DATE:2026-09-10, TIME:04:00 PM, TIME:06:00 PM |
 | 158 | Attachment: Don't lose your progress - pick up where you left off 🎯.eml | Don't lose your progress - pick up where | **ATTENDANCE** | 11.2% | MEDIUM | None |  |
-| 159 | Attachment: OE1 Interior Design extra lecture schedule.eml | OE1 Interior Design extra lecture schedu | **GENERAL** | 11.8% | HIGH | YES: Interior Design extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
+| 159 | Attachment: OE1 Interior Design extra lecture schedule.eml | OE1 Interior Design extra lecture schedu | **GENERAL** | 11.8% | HIGH | YES: Interior Design extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
+
 CR-506 |
 | 160 | Attachment: FW: NMIMS x Coursera Student Office Hours.eml | FW: NMIMS x Coursera Student Office Hour | **ATTENDANCE** | 12.5% | HIGH | None | TIME:05:00 PM, TIME:05:40 PM, TIME:05:00 PM |
 | 161 | Attachment: OE2-Production Management extra lecture schedule.eml | OE2-Production Management extra lecture  | **GENERAL** | 11.2% | HIGH | YES: Management extra Schedule Change (New Date) | DATE:2026-08-28, DATE:2026-09-25, DATE:2026-10-02 |
-| 162 | Attachment: OE2-Life Skills extra tutorial schedule.eml | OE2-Life Skills extra tutorial schedule | **GENERAL** | 11.3% | HIGH | YES: Class / Examination Schedule Change (New Date) | TIME:05:00 PM, TIME:06:00 PM, ROOM:room
-
+| 162 | Attachment: OE2-Life Skills extra tutorial schedule.eml | OE2-Life Skills extra tutorial schedule | **GENERAL** | 11.3% | HIGH | YES: Class / Examination Schedule Change (New Date) | TIME:05:00 PM, TIME:06:00 PM, ROOM:room
+
+
+
  CR |
 | 163 | Attachment: SIH Problem Statement and Theme Details.eml | SIH Problem Statement and Theme Details | **EXAM** | 11.1% | MEDIUM | None | TIME:02:00 PM, TIME:03:00 PM, SUBJECT:Artificial Intelligence |
 | 164 | Attachment: Refresh with a short course recap.eml | Refresh with a short course recap | **EVENT** | 10.8% | MEDIUM | None | SUBJECT:Software Engineering |
@@ -243,18 +257,23 @@ CR-506 |
 | 180 | Attachment: Change in lecture schedule on 01.09.2026 and DL extra lecture on 03.09.2026 - MBA Tech-AI, Sem V.eml | Change in lecture schedule on 01.09.2026 | **CLASSROOM / TIMETABLE** | 12.8% | HIGH | YES: Change in Schedule Change (New Date) | TIME:11:00 AM, TIME:11:00 AM, SUBJECT:Change in |
 | 181 | Attachment: OE2 TIM - Extra Lecture on 04.09.2026.eml | OE2 TIM - Extra Lecture on 04.09.2026 | **EXAM** | 10.9% | HIGH | YES: Kindly note extra Schedule Change (New Date) | DATE:2026-09-04, TIME:05:00 PM, TIME:06:00 PM |
 | 182 | Attachment: Just a few minutes today can make a big difference 📚.eml | Just a few minutes today can make a big  | **EXAM** | 11.1% | HIGH | None |  |
-| 183 | Attachment: OE1- Basic Decision Making with Spreadsheet lecture cancellation & re-schedule details.eml | OE1- Basic Decision Making with Spreadsh | **EVENT** | 11.7% | HIGH | YES: Making with Spreadsheet Schedule Change (New Date) | ROOM:room
-
+| 183 | Attachment: OE1- Basic Decision Making with Spreadsheet lecture cancellation & re-schedule details.eml | OE1- Basic Decision Making with Spreadsh | **EVENT** | 11.7% | HIGH | YES: Making with Spreadsheet Schedule Change (New Date) | ROOM:room
+
+
+
  CC-803, SUBJECT:Making with Spreadsheet |
-| 184 | Attachment: OE2 Advertising and Public relations extra lecture schedule.eml | OE2 Advertising and Public relations ext | **GENERAL** | 12.3% | HIGH | YES: Public relations extra Schedule Change (New Date) | TIME:00:00 PM, ROOM:room
+| 184 | Attachment: OE2 Advertising and Public relations extra lecture schedule.eml | OE2 Advertising and Public relations ext | **GENERAL** | 12.3% | HIGH | YES: Public relations extra Schedule Change (New Date) | TIME:00:00 PM, ROOM:room
+
 CR-506, SUBJECT:Public relations extra |
-| 185 | Attachment: OE1 Elements of Automation extra lecture schedule.eml | OE1 Elements of Automation extra lecture | **CLASSROOM / TIMETABLE** | 11.2% | HIGH | YES: Automation extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
+| 185 | Attachment: OE1 Elements of Automation extra lecture schedule.eml | OE1 Elements of Automation extra lecture | **CLASSROOM / TIMETABLE** | 11.2% | HIGH | YES: Automation extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
+
 CR |
 | 186 | Attachment: Dive into  AI Receptive Software Development!.eml | Dive into  AI Receptive Software Develop | **EVENT** | 11.0% | HIGH | None |  |
 | 187 | Attachment: OE2 Management through Movies –DIV A extra lecture schedule.eml | OE2 Management through Movies –DIV A ext | **GENERAL** | 11.3% | HIGH | None | TIME:06:00 PM, SUBJECT:DIV A extra |
 | 188 | Attachment: Invitation to Participate in Book Review Competition on Srimad Bhagavatam.eml | Invitation to Participate in Book Review | **EVENT** | 12.3% | MEDIUM | None | DATE:2026-09-04, DATE:2026-09-04, DATE:2026-09-03 |
 | 189 | Attachment: 📚 Start AI Receptive Software Development!.eml | 📚 Start AI Receptive Software Developmen | **EXAM** | 11.0% | MEDIUM | None |  |
-| 190 | Attachment: OE2 Financial derivatives –DIV B lecture cancellation  .eml | OE2 Financial derivatives –DIV B lecture | **GENERAL** | 11.3% | HIGH | None | TIME:06:00 PM, ROOM:room
+| 190 | Attachment: OE2 Financial derivatives –DIV B lecture cancellation  .eml | OE2 Financial derivatives –DIV B lecture | **GENERAL** | 11.3% | HIGH | None | TIME:06:00 PM, ROOM:room
+
 CR-502, SUBJECT:DIV B |
 | 191 | Attachment: FW: Holiday on account of Raksha Bandhan – Friday, 28 August 2026.eml | FW: Holiday on account of Raksha Bandhan | **GENERAL** | 15.5% | HIGH | None | DATE:2026-08-28, DATE:2026-08-28, DATE:2026-08-18 |
 | 192 | Attachment: OE1 Drone Technology B2 batch practical cancelled on 26.08.2026.eml | OE1 Drone Technology B2 batch practical  | **ACADEMIC** | 11.7% | HIGH | YES: Kindly note Schedule Change (New Date) | DATE:2026-08-26, TIME:06:00 PM, SUBJECT:Kindly note |
@@ -269,8 +288,10 @@ CR-502, SUBJECT:DIV B |
 | 201 | Attachment: OE2 Leading through Life Skills Div. B lecture cancellation and re-schedule details.eml | OE2 Leading through Life Skills Div. B l | **EVENT** | 11.5% | MEDIUM | YES: Kindly note Schedule Change (New Date) | DATE:2004-06-05, SUBJECT:Kindly note |
 | 202 | Attachment: Save 25% on in-demand skills!.eml | Save 25% on in-demand skills! | **EXAM** | 10.9% | MEDIUM | None | SUBJECT:Artificial Intelligence |
 | 203 | Attachment: Try a month of Coursera Plus for 25% off!.eml | Try a month of Coursera Plus for 25% off | **EXAM** | 10.9% | MEDIUM | None | SUBJECT:Artificial Intelligence |
-| 204 | Attachment: OE2 Waste Management lecture cancelled on 21.08.2026.eml | OE2 Waste Management lecture cancelled o | **ACADEMIC** | 12.9% | HIGH | YES: Waste Management Schedule Change (New Date) | DATE:2026-08-21, TIME:05:00 PM, ROOM:room
-
+| 204 | Attachment: OE2 Waste Management lecture cancelled on 21.08.2026.eml | OE2 Waste Management lecture cancelled o | **ACADEMIC** | 12.9% | HIGH | YES: Waste Management Schedule Change (New Date) | DATE:2026-08-21, TIME:05:00 PM, ROOM:room
+
+
+
 CR |
 | 205 | Attachment: OE2 -Environment Mgmt lecture cancellation and re-schedule details.eml | OE2 -Environment Mgmt lecture cancellati | **EVENT** | 11.5% | HIGH | YES: Environment Mgmt Schedule Change (New Date) | DATE:2026-08-20, DATE:2026-08-21, DATE:2026-08-28 |
 | 206 | Attachment: OE2  TIM lecture cancellation and re-schedule details.eml | OE2  TIM lecture cancellation and re-sch | **EVENT** | 11.5% | HIGH | YES: TIM Schedule Change (New Date) | DATE:2026-08-21, DATE:2026-08-28, TIME:04:00 PM |
@@ -278,28 +299,40 @@ CR |
 | 208 | Attachment: You're invited to join Coursera!.eml | You're invited to join Coursera! | **ATTENDANCE** | 11.5% | MEDIUM | None | ROOM:online |
 | 209 | Attachment: OE2 -Financial Derivatives -Div B lecture cancellation and M1 TEST details.eml | OE2 -Financial Derivatives -Div B lectur | **EVENT** | 11.2% | HIGH | None | DATE:2026-08-20, TIME:06:00 PM, TIME:04:00 PM |
 | 210 | Attachment: FW: Approval for Extra lecture -FIMIS  (OE -2) - Theory.eml | FW: Approval for Extra lecture -FIMIS  ( | **ACADEMIC** | 11.2% | HIGH | None | DATE:2026-10-09, DATE:2026-10-09, DATE:2026-10-09 |
-| 211 | Attachment: OE2 -IES extra lecture schedule.eml | OE2 -IES extra lecture schedule | **EVENT** | 11.0% | HIGH | YES: IES extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
-
+| 211 | Attachment: OE2 -IES extra lecture schedule.eml | OE2 -IES extra lecture schedule | **EVENT** | 11.0% | HIGH | YES: IES extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
+
+
+
  CR |
 | 212 | Attachment: RE: Revised M2 test schedule - OE1 Wireless Communication for Everybody..eml | RE: Revised M2 test schedule - OE1 Wirel | **EXAM** | 11.8% | HIGH | YES: Class / Examination Schedule Change (New Date) | DATE:2026-10-12, DATE:2026-10-19, TIME:04:00 PM |
 | 213 | Attachment: RE: Reg: Missed Class test due to medical reason.eml | RE: Reg: Missed Class test due to medica | **ATTENDANCE** | 11.2% | HIGH | None | DATE:2026-10-10 |
 | 214 | Attachment: DAA lab extra practical schedule - MBA Tech-AI, Sem V.eml | DAA lab extra practical schedule - MBA T | **EXAM** | 11.7% | HIGH | None | DATE:2026-10-09, DATE:2026-10-23, TIME:10:00 AM |
 | 215 | Attachment: New Announcement: MPSTME ODD Semester Final Exam Timetable A Y 2026 27 send  for course.eml | New Announcement: MPSTME ODD Semester Fi | **EXAM** | 12.5% | HIGH | None |  |
-| 216 | Attachment: OE2 -Life Skills  extra tutorial schedule.eml | OE2 -Life Skills  extra tutorial schedul | **GENERAL** | 12.2% | HIGH | YES: Class / Examination Schedule Change (New Date) | TIME:06:00 PM, ROOM:room
-
+| 216 | Attachment: OE2 -Life Skills  extra tutorial schedule.eml | OE2 -Life Skills  extra tutorial schedul | **GENERAL** | 12.2% | HIGH | YES: Class / Examination Schedule Change (New Date) | TIME:06:00 PM, ROOM:room
+
+
+
 CR |
-| 217 | Attachment: OE2 Financial Derivatives –DIV B  extra lecture schedule.eml | OE2 Financial Derivatives –DIV B  extra  | **CLASSROOM / TIMETABLE** | 11.9% | HIGH | YES: DIV B extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
+| 217 | Attachment: OE2 Financial Derivatives –DIV B  extra lecture schedule.eml | OE2 Financial Derivatives –DIV B  extra  | **CLASSROOM / TIMETABLE** | 11.9% | HIGH | YES: DIV B extra Schedule Change (New Date) | TIME:00:00 PM, TIME:00:00 PM, ROOM:room
+
 CR-502 |
 | 218 | Attachment: RE: Book Review Writing Competition - 2026.eml | RE: Book Review Writing Competition - 20 | **GENERAL** | 11.7% | LOW | None | DATE:2026-10-15, ROOM:online |
 | 219 | Attachment: Attendance Report_70512400043.eml | Attendance Report_70512400043 | **ATTENDANCE** | 15.7% | HIGH | None |  |
 | 220 | Attachment: Reg: Change of venue for NLP M2 test on 07.10.2026 - MBA Tech-AI, Sem V.eml | Reg: Change of venue for NLP M2 test on  | **GENERAL** | 11.5% | HIGH | None | TIME:04:00 PM, SUBJECT:NLP |
-| 221 | Attachment: IS - II extra practical schedule - MBA Tech-AI, Sem V.eml | IS - II extra practical schedule - MBA T | **EXAM** | 11.6% | HIGH | None | ROOM:conference room
-
-
-
-Link, ROOM:lab
-
-
+| 221 | Attachment: IS - II extra practical schedule - MBA Tech-AI, Sem V.eml | IS - II extra practical schedule - MBA T | **EXAM** | 11.6% | HIGH | None | ROOM:conference room
+
+
+
+
+
+
+
+Link, ROOM:lab
+
+
+
+
+
 2, SUBJECT:II extra |
 | 222 | Attachment: IS- II extra lecture scheduled on 15.10.2026 - MBA Tech-AI, Sem V.eml | IS- II extra lecture scheduled on 15.10. | **EXAM** | 11.4% | HIGH | None | TIME:11:00 AM, SUBJECT:II extra |
 | 223 | Attachment: Your weekly learning snapshot is here 📊.eml | Your weekly learning snapshot is here 📊 | **EXAM** | 10.9% | MEDIUM | None |  |
@@ -316,9 +349,12 @@ Link, ROOM:lab
 | 234 | Attachment: OE1 -Basic decision making with Spreadsheet extra lecture / practical schedule.eml | OE1 -Basic decision making with Spreadsh | **EXAM** | 11.1% | HIGH | YES: Spreadsheet extra Schedule Change (New Date) | DATE:2026-10-05, DATE:2026-10-12, DATE:2026-10-06 |
 | 235 | Attachment: Your weekly learning snapshot is here 📊.eml | Your weekly learning snapshot is here 📊 | **EXAM** | 11.1% | MEDIUM | None |  |
 | 236 | Attachment: OE2 TIM extra lecture schedule.eml | OE2 TIM extra lecture schedule | **EXAM** | 11.3% | HIGH | YES: TIM extra Schedule Change (New Date) | DATE:2026-10-01, DATE:2026-10-01, DATE:2026-10-15 |
-| 237 | Attachment: OE1 - Engineering Materials for Daily Life lecture cancellation details.eml | OE1 - Engineering Materials for Daily Li | **ACADEMIC** | 12.2% | HIGH | YES: Materials for Daily Life Schedule Change (New Date) | ROOM:room
-
-
+| 237 | Attachment: OE1 - Engineering Materials for Daily Life lecture cancellation details.eml | OE1 - Engineering Materials for Daily Li | **ACADEMIC** | 12.2% | HIGH | YES: Materials for Daily Life Schedule Change (New Date) | ROOM:room
+
+
+
+
+
 7, SUBJECT:Materials for Daily Life |
 | 238 | Attachment: MAD extra lecture and practical scheduled on 03.10.2026 - MBA Tech-AI, Sem V.eml | MAD extra lecture and practical schedule | **EXAM** | 11.4% | HIGH | None | TIME:10:00 AM, SUBJECT:MAD extra lecture and |
 | 239 | Attachment: Developers across JAPAC have already registered!.eml | Developers across JAPAC have already reg | **REGISTRATION** | 11.3% | MEDIUM | None |  |
@@ -358,8 +394,10 @@ Link, ROOM:lab
 | 273 | Attachment: Change in venue of OE1 EOA on 21.09.2026 and 22.09.2026.eml | Change in venue of OE1 EOA on 21.09.2026 | **CLASSROOM / TIMETABLE** | 12.5% | HIGH | YES: Class / Examination Schedule Change (New Date) | TIME:04:00 PM, TIME:06:00 PM, TIME:05:00 PM |
 | 274 | Attachment: Classroom for OE2 Life Skills.eml | Classroom for OE2 Life Skills  | **GENERAL** | 13.3% | HIGH | None | TIME:00:00 PM, TIME:00:00 PM, TIME:00:00 PM |
 | 275 | Attachment: Monthly Thematic e-Books Display on "Kargil Vijay Diwas – 26 July ".eml | Monthly Thematic e-Books Display on "Kar | **EXAM** | 10.8% | HIGH | None | DATE:2026-07-26, DATE:2026-07-26, DATE:2026-07-26 |
-| 276 | Attachment: OE-1 : Basic Decision Making with Spreadsheet theory / practical cancellation.eml | OE-1 : Basic Decision Making with Spread | **EVENT** | 11.3% | HIGH | YES: Kindly note Schedule Change (New Date) | ROOM:room
-
+| 276 | Attachment: OE-1 : Basic Decision Making with Spreadsheet theory / practical cancellation.eml | OE-1 : Basic Decision Making with Spread | **EVENT** | 11.3% | HIGH | YES: Kindly note Schedule Change (New Date) | ROOM:room
+
+
+
  CC-803, SUBJECT:Kindly note |
 | 277 | Attachment: Advisory for Students to deal with Cyber Fraud / Unauthorized Calls.eml | Advisory for Students to deal with Cyber | **GENERAL** | 14.0% | LOW | None |  |
 | 278 | Attachment: Venue change for OE2 subjects - Sem V.eml | Venue change for OE2 subjects - Sem V | **GENERAL** | 12.3% | HIGH | None | ROOM:room change |
@@ -381,8 +419,10 @@ Link, ROOM:lab
 | 294 | Attachment: RE: Introduction to ERP I and II.eml | RE: Introduction to ERP I and II  | **REGISTRATION** | 10.7% | HIGH | None | TIME:00:00 PM |
 | 295 | Attachment: OE1 -Sustainable Energy Technologies lecture cancellation and re-schedule details.eml | OE1 -Sustainable Energy Technologies lec | **ACADEMIC** | 11.6% | HIGH | YES: Energy Technologies Schedule Change (New Date) | DATE:2026-07-20, DATE:2026-07-21, DATE:2026-08-04 |
 | 296 | Attachment: OE1 -Basic decision making with spreadsheet lecture cancelled on 20.07.2026 - Sem V.eml | OE1 -Basic decision making with spreadsh | **ACADEMIC** | 12.2% | HIGH | YES: Kindly note Schedule Change (New Date) | SUBJECT:Kindly note |
-| 297 | Attachment: Change in lab venue- MBA Tech & B Tech-AI, Sem V w.e.f. 20.07.2026.eml | Change in lab venue- MBA Tech & B Tech-A | **GENERAL** | 11.3% | HIGH | None | ROOM:Lab
-CL, ROOM:Lab
+| 297 | Attachment: Change in lab venue- MBA Tech & B Tech-AI, Sem V w.e.f. 20.07.2026.eml | Change in lab venue- MBA Tech & B Tech-A | **GENERAL** | 11.3% | HIGH | None | ROOM:Lab
+
+CL, ROOM:Lab
+
 4, ROOM:lab venue |
 | 298 | Attachment: You have been added to a class team in Microsoft Teams.eml | You have been added to a class team in M | **EVENT** | 11.2% | HIGH | None | ROOM:online, SUBJECT:You have been added to a |
 | 299 | Attachment: Greetings and Introductory Message : Prof. Sougata Ray, Vice Chancellor.eml | Greetings and Introductory Message : Pro | **EXAM** | 11.2% | MEDIUM | None | SUBJECT:Artificial Intelligence |
