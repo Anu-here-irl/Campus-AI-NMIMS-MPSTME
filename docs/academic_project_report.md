@@ -1,10 +1,10 @@
 # Campus AI: Autonomous Academic Operations & Intelligent Student Study Assistant
 ## A Machine Learning and Retrieval-Augmented Natural Language Processing System for University Campus Operations
 
-**Course:** B.Tech Computer Engineering (Semester 5) — Natural Language Processing  
+**Course:** MBATech AI (Semester 5) — Natural Language Processing  
 **Academic Year:** 2026–2027  
 **Project Repository:** `CAMPUS AI`  
-**Authors:** Student Project Team  
+**Authors:** Anjali Upadhyay, Diya Rajpal, Lakshya Gupta
 **Evaluation Date:** October 2026  
 
 ---
